@@ -20,11 +20,18 @@ class Header extends Component{
 
   }
   handleSubmit=(event)=>{
-    
-    axios.get("https://vaccinefrontend.herokuapp.com/vaccine",{ params:{distr : this.state.district}}).then(response =>{
+
+     var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); 
+var yyyy = today.getFullYear();
+
+today = dd + '-' + mm + '-' + yyyy;
+    axios.get("https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByDistrict?district_id="+this.state.district+"&date="+today).then(response =>{
+      
       
       this.setState({
-       vaccine: response.data.availability
+       vaccine: response.data.centers
       });
       
     });
