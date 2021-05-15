@@ -9,7 +9,7 @@ class Contentr extends React.Component{
 
       
 
-      if(this.props.vaccine==null){
+      if(this.props.vaccine==""){
 
         return(
           <div class="container1">No Centers Available</div>
