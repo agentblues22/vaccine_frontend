@@ -21,7 +21,7 @@ class Header extends Component{
   }
   handleSubmit=(event)=>{
     
-    axios.get("/vaccine",{ params:{distr : this.state.district}}).then(response =>{
+    axios.get("https://vaccinefrontend.herokuapp.com/vaccine",{ params:{distr : this.state.district}}).then(response =>{
       
       this.setState({
        vaccine: response.data.availability
