@@ -83,6 +83,19 @@ input[type=submit]:hover{
  
 
 }
+table, th, td {
+    border: 1px solid black;
+    border-radius: 6px;
+  }
+  
+  table {
+    width: 100%;
+  }
+  .h2{
+      font-size: 15px;
+
+  }
+
 @media only screen and (max-width: 600px){
     .container1{
         font-size: 10px;

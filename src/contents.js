@@ -9,7 +9,7 @@ class Contentr extends React.Component{
 
       
 
-      if(this.props.vaccine==""){
+      if(this.props.vaccine==null){
 
         return(
           <div class="container1">No Centers Available</div>
@@ -26,13 +26,24 @@ class Contentr extends React.Component{
           
              <div class="container1">
              <h1>{rawdata.name}</h1>
-             <ul>
-               <li>center adress:{" "} {rawdata.address}</li>
-               <li>pincode:{" "} {rawdata.pincode}</li>
-               <li>from:{rawdata.from}{" "} to:{rawdata.to}</li>
-               <li>fee type:{" "}{rawdata.fee_type}</li>
-               <h2>available capacity: {rawdata.sessions[0].available_capacity}</h2>
-             </ul>
+             <table>
+               <tr>
+               <td>center address:</td><td>{" "} {rawdata.address}</td>
+               </tr>
+               <tr>
+               <td>pincode:</td><td>{" "} {rawdata.pincode}</td>
+               </tr>
+               <tr>
+               <td>time:</td><td>from:{rawdata.from}{" "} to:{rawdata.to}</td>
+               </tr>
+               <tr>
+               <td>fee type:</td><td>{" "}{rawdata.fee_type}</td>
+               </tr>
+               <tr>
+                 <td>vaccine type:</td><td>{" "}{rawdata.sessions[0].vaccine}</td>
+               </tr>
+               <h2 class="h2">available capacity: {rawdata.sessions[0].available_capacity}</h2>
+             </table>
              </div>
            
            )
