@@ -27,7 +27,7 @@ var mm = String(today.getMonth() + 1).padStart(2, '0');
 var yyyy = today.getFullYear();
 
 today = dd + '-' + mm + '-' + yyyy;
-    axios.get("https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByDistrict?district_id="+this.state.district+"&date="+today).then(response =>{
+    axios.get("https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id="+this.state.district+"&date="+today).then(response =>{
       
       if(response.data.centers==""){
         this.setState({
